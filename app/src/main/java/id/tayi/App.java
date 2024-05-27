@@ -18,7 +18,7 @@ public class App extends Application{
         stage.setTitle("BuangKit");
         stage.getIcons().add(new Image(getClass().getResource("/images/logo2.png").toExternalForm()));
 
-        showLoginPage();
+        showTrashPage();
     }
 
     public void showHomePage(){

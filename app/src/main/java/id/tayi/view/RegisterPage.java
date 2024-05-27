@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -74,24 +75,30 @@ public class RegisterPage {
             String pass = password.getText();
             String nmr = nomor.getText();
             String kta = kota.getValue();
-            User user = new User(name, pass, nmr, kta);
             if (name == null || pass == null || nmr == null || kta == null) {
                 info.setText("Harap isi data diri anda");
                 info.setVisible(true);
-            }
-            else if (userDAO.isUsernameExists(name)){
+            } else if (userDAO.isUsernameExists(name)) {
                 info.setText("Username tidak tersedia");
                 info.setVisible(true);
-            }
-            else {
+            } else {
                 Alert infoAlert = new Alert(AlertType.INFORMATION);
                 infoAlert.setHeaderText(null);
                 infoAlert.setContentText("Berhasil membuat akun");
                 infoAlert.showAndWait();
+                User user = new User(name, pass, nmr, kta);
                 userDAO.addUser(user);
                 app.showLoginPage();
             }
         });
+        TextFormatter<String> textFormatter = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")) {
+                return change;
+            }
+            return null;
+        });
+        nomor.setTextFormatter(textFormatter);
         back.setOnAction(e -> {
             app.showLoginPage();
         });

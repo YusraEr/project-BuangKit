@@ -1,53 +1,72 @@
 package id.tayi.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Trash {
-    private StringProperty id;
-    private User user;
+    private int id;
+    private StringProperty username;
     private StringProperty type;
-    private IntegerProperty berat;
-    
-    public StringProperty getId() {
+    private DoubleProperty berat;
+    private StringProperty alamat;
+    private StringProperty waktu;
+
+    public Trash(String username, String type, double berat, String alamat,
+            String waktu) {
+        this.username = new SimpleStringProperty(username);
+        this.type = new SimpleStringProperty(type);
+        this.berat = new SimpleDoubleProperty(berat);
+        this.alamat = new SimpleStringProperty(alamat);
+        this.waktu = new SimpleStringProperty(waktu);
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(StringProperty id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public StringProperty getAlamat() {
+        return alamat;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setAlamat(String alamat) {
+        this.alamat.setValue(alamat);
+    }
+
+    public StringProperty getWaktu() {
+        return waktu;
+    }
+
+    public void setWaktu(String waktu) {
+        this.waktu.setValue(waktu);
+    }
+
+    public StringProperty getusername() {
+        return username;
+    }
+
+    public void setusername(String username) {
+        this.username.setValue(username);
     }
 
     public StringProperty getType() {
         return type;
     }
 
-    public void setType(StringProperty type) {
-        this.type = type;
+    public void setType(String type) {
+        this.type.setValue(type);
     }
 
-    public IntegerProperty getBerat() {
+    public DoubleProperty getBerat() {
         return berat;
     }
 
-    public void setBerat(IntegerProperty berat) {
-        this.berat = berat;
+    public void setBerat(double berat) {
+        this.berat.setValue(berat);
     }
-
-    public Trash(String id, User user, String type, int berat) {
-        this.id = new SimpleStringProperty(id);
-        this.user = user;
-        this.type = new SimpleStringProperty(type);
-        this.berat = new SimpleIntegerProperty(berat);
-    }
-
 }
