@@ -1,0 +1,105 @@
+#background {
+  -fx-background-image: url(/images/backgroundHome.jpg);
+  -fx-background-size: 1366, 696;
+  -fx-background-repeat: no-repeat;
+  -fx-padding: 50px, 100px, 50px, 100px;
+  -fx-background-color: black;
+}
+.togle {
+  -fx-spacing: 5px;
+  -fx-text-fill: #ffff;
+  -fx-font-size: 20px;
+  -fx-font-family: Montserrat, sans-serif;
+  -fx-background-color: transparent;
+  -fx-background-radius: 20px;
+  -fx-background-size: 150px, 50px;
+  -fx-font-weight: bold;
+}
+#selected {
+  -fx-spacing: 5px;
+  -fx-text-fill: #004e00;
+  -fx-font-size: 20px;
+  -fx-font-family: Montserrat, sans-serif;
+  -fx-background-color: #ffff;
+  -fx-background-radius: 20px;
+  -fx-background-size: 150px, 50px;
+  -fx-font-weight: bold;
+}
+.togle:hover {
+  -fx-background-color: #ffff;
+  -fx-effect: innershadow(gaussian, rgb(0, 0, 0, 0.5), 5, 0, 2, 2);
+  -fx-text-fill: #004e00;
+}
+.togle:active {
+  -fx-background-color: #ffff;
+  -fx-text-fill: #004e00;
+}
+#bar {
+  -fx-background-color: transparent;
+}
+#logo {
+  -fx-background-size: 200px, 200px;
+}
+.header {
+  -fx-font-size: 70px;
+  -fx-text-fill: rgb(255, 255, 255);
+  -fx-font-weight: bold;
+  -fx-text-alignment: left;
+  -fx-spacing: 5px;
+  -fx-font-family: Poppins, sans-serif;
+  /* -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.7), 5, 0, 3, 3); */
+}
+.header:hover {
+  /* -fx-text-fill: rgb(253, 0, 0); */
+}
+#duo {
+  -fx-max-height: 200px;
+  -fx-min-height: 200px;
+  -fx-pref-height: 200px;
+  -fx-spacing: 20px;
+}
+#desc {
+  -fx-font-family: Montserrat, sans-serif;
+  -fx-font-size: 20px;
+  -fx-text-fill: #ffffff;
+  /* -fx-background-color: rgb(255, 255, 255); */
+  -fx-background-radius: 5px;
+  -fx-text-alignment: left;
+  -fx-spacing: -10;
+  -fx-font-weight: bold;
+  /* -fx-padding: 15px; */
+}
+.nama {
+  -fx-font-family: Poppins, sans-serif;
+  -fx-text-fill: white;
+  -fx-text-alignment: left;
+  -fx-font-size: 20px;
+  -fx-font-weight: bold;
+}
+#start {
+  -fx-font-family: Poppins, sans-serif;
+  -fx-text-alignment: center;
+  -fx-font-size: 20px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ffff;
+  -fx-background-color: #007e00;
+  -fx-pref-height: 50px;
+  -fx-min-width: 300px;
+  -fx-background-radius: 40px, 40px, 40px, 0px;
+  -fx-padding: 10px;
+}
+#start:hover {
+  -fx-text-fill: #007e00;
+  -fx-background-color: white;
+}
+#start:active {
+  -fx-text-fill: #007e00;
+  -fx-background-color: white;
+  -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0, 2, 2);
+}
+#poin {
+  -fx-text-fill: white;
+  -fx-font-family: Poppins, sans-serif;
+  -fx-font-size: 30px;
+  -fx-text-alignment: left;
+}
