@@ -1,21 +1,71 @@
-.image {
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 10); 
-    -fx-rotate: 0; 
-    -fx-scale-x: 1; 
-    -fx-scale-y: 1; 
-    -fx-padding: 10; 
-    -fx-border-color: black; 
-    -fx-border-width: 2; 
-    -fx-alignment: center;
-    -fx-halignment: center;
-    -fx-valignment: center;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Montserrat&display=swap");
+#header {
+  -fx-font-size: 40px;
+  -fx-font-family: "Montserrat", sans-serif;
+  -fx-text-fill: #007e00;
+  -fx-font-weight: bold;
+}
+#background {
+  -fx-background-image: url(/images/bg2.jpg);
+  -fx-background-size: 1366, 696;
+  -fx-background-repeat: no-repeat;
+  -fx-padding: 50px, 100px, 50px, 100px;
+  -fx-background-color: #005e00;
 }
 
-.image:hover {
-    -fx-effect: dropshadow(gaussian, #007e00, 10, 0.5, 0, 10);
-    -fx-rotate: 5; 
-    -fx-scale-x: 1.1; 
-    -fx-scale-y: 1.1; 
-    -fx-translate-x: 5; 
-    -fx-translate-y: 5; 
+#input {
+  -fx-max-height: 600px;
+  -fx-max-width: 450px;
+  -fx-padding: 40px;
+  -fx-spacing: 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 20, 0, 0, 4);
+  -fx-alignment: center;
+  -fx-background-color: #ffffff;
+  -fx-background-radius: 20px;
+}
+
+.field {
+  -fx-font-size: 16px;
+  -fx-font-family: Montserrat, sans-serif;
+  -fx-max-width: 300px;
+  -fx-min-height: 60px;
+  -fx-min-width: 200px;
+  -fx-background-radius: 10px;
+  -fx-background-color: rgb(255, 255, 255);
+  -fx-text-fill: rgb(17, 17, 17);
+  -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0, 2, 2);
+  -fx-prompt-text-fill: rgb(133, 133, 133);
+}
+
+.btn {
+  -fx-min-height: 60px;
+  -fx-min-width: 60px;
+  -fx-background-color: #006e00;
+  -fx-text-fill: rgb(255, 255, 255);
+  -fx-font-size: 17px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 100px;
+}
+.btn:pressed {
+  -fx-background-color: #affdc0;
+  -fx-text-fill: #006e00;
+}
+
+.custom-checkbox {
+  -fx-background-color: transparent;
+  -fx-padding: 0.166667em;
+}
+
+.custom-checkbox .box {
+  -fx-background-color: transparent;
+  -fx-border-color: #7c7c7c86;
+  -fx-backgorund-radius: 10px;
+  -fx-border-radius: 10px;
+  -fx-shape: "M0,0 h 20 v 20 h -20 Z";
+}
+
+.custom-checkbox:selected .box {
+  -fx-backgorund-radius: 10px;
+  -fx-border-radius: 10px;
+  -fx-background-color: transparent;
 }

@@ -1,15 +1,27 @@
 package id.tayi.view;
 
 import id.tayi.App;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.DoubleProperty;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 public class TrashPage {
     private App app;
     private Scene scene;
+    private DoubleProperty h = new SimpleDoubleProperty(0);
 
     public TrashPage(App app) {
         this.app = app;
@@ -17,50 +29,57 @@ public class TrashPage {
     }
 
     public void initialize() {
-        ImageView kaca = new ImageView(new Image(getClass().getResource("/images/kaca.png").toExternalForm()));
-        ImageView besi = new ImageView(new Image(getClass().getResource("/images/besi.png").toExternalForm()));
-        ImageView kertas = new ImageView(new Image(getClass().getResource("/images/kertas.png").toExternalForm()));
-        ImageView plastik = new ImageView(new Image(getClass().getResource("/images/plastik.png").toExternalForm()));
-        ImageView organik = new ImageView(new Image(getClass().getResource("/images/organik.png").toExternalForm()));
-        ImageView elektronik = new ImageView(new Image(getClass().getResource("/images/elektronik.png").toExternalForm()));
-
-        GridPane choice = new GridPane(40, 40);
-        StackPane root = new StackPane(choice);
+        Button kg = new Button("Kg");
+        Label header = new Label("Buang Sampah");
+        Button submit = new Button("Submit");
+        Button kembali = new Button("Kembali");
+        TextField nilai = new TextField();
+        TextField alamat = new TextField();
+        ComboBox<String> jenis = new ComboBox<>();
+        CheckBox nanya = new CheckBox("Diantarkan ke bank sampah?");
+        HBox bawah = new HBox(160, kembali, submit);
+        HBox berat = new HBox(10,nilai, kg);
+        VBox input = new VBox(20, header, jenis, berat, alamat, nanya, bawah);
+        StackPane root = new StackPane(input);
         scene = new Scene(root, 1366, 693);
 
-        kaca.setFitHeight(200);
-        kaca.setFitWidth(150);
+        jenis.getItems().addAll("Kertas", "Plastik", "Kaca", "Besi", "Organik", "Elektronik");
 
-        pattern(kertas);
-        pattern(plastik);
-        pattern(besi);
-        pattern(kaca);
-        pattern(organik);
-        pattern(elektronik);
+        input.setId("input");
+        header.setId("header");
+        kg.getStyleClass().add("btn");
+        root.setId("background");
+        submit.getStyleClass().add("btn");
+        kembali.getStyleClass().add("btn");
+        nilai.setPromptText("Berat");
+        nilai.getStyleClass().add("field");
+        jenis.getStyleClass().add("field");
+        alamat.getStyleClass().add("field");
+        alamat.setPromptText("Alamat");
+        jenis.setPromptText("Jenis sampah");
+        nanya.getStyleClass().add("custom-checkbox");
+        input.setAlignment(Pos.CENTER);
+        berat.setAlignment(Pos.CENTER);
+        bawah.setAlignment(Pos.CENTER);
 
-        choice.add(kertas, 0, 0);
-        choice.add(plastik, 1, 0);
-        choice.add(besi, 2, 0);
-        choice.add(kaca, 0, 1);
-        choice.add(organik, 1, 1);
-        choice.add(elektronik, 2, 1);
+        TextFormatter<String> textFormatter = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*\\.?\\d*")) {
+                return change;
+            }
+            return null;
+        });
+        nilai.setTextFormatter(textFormatter);
 
-        scene.getStylesheets().add("/style/trash.css");
-        kertas.setOnMousePressed(e -> {
+        kembali.setOnAction(e ->{
             app.showHomePage();
         });
-    }
 
-    private static void pattern(ImageView image) {
-        image.setFitHeight(200);
-        image.setFitWidth(200);
-        image.getStyleClass().add("image");
-        image.setOnMouseEntered(e -> {
-
+        submit.setOnAction(e ->{
+            app.showHistoryPage();
         });
-        image.setOnMouseExited(e -> {
 
-        });
+        scene.getStylesheets().add("/style/trash.css");
     }
 
     public Scene getScene() {
