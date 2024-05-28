@@ -1,5 +1,6 @@
 package id.tayi;
 
+import id.tayi.view.DefaultPage;
 import id.tayi.view.HistoryPage;
 import id.tayi.view.HomePage;
 import id.tayi.view.LoginPage;
@@ -10,49 +11,38 @@ import javafx.application.Application;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class App extends Application{
+public class App extends Application {
     private Stage stage;
+
     @Override
     public void start(Stage stage) {
         this.stage = stage;
         stage.setTitle("BuangKit");
         stage.getIcons().add(new Image(getClass().getResource("/images/logo2.png").toExternalForm()));
 
-        showTrashPage();
+        showDefaultPage();
     }
 
-    public void showHomePage(){
-        HomePage home = new HomePage(this);
-        stage.setScene(home.getScene());
-        stage.show();
-    }
-
-    public void showLoginPage(){
+    public void showLoginPage() {
         LoginPage login = new LoginPage(this);
         stage.setScene(login.getScene());
         stage.show();
     }
 
-    public void showRegisterPage(){
+    public void showRegisterPage() {
         RegisterPage regis = new RegisterPage(this);
         stage.setScene(regis.getScene());
         stage.show();
     }
 
-    public void showHistoryPage(){
-        HistoryPage his = new HistoryPage(this);
-        stage.setScene(his.getScene());
-        stage.show();
-    }
-    
-    public void showRewardPage(){
-        RewardPage his = new RewardPage(this);
-        stage.setScene(his.getScene());
-        stage.show();
-    }
-    
-    public void showTrashPage(){
+    public void showTrashPage() {
         TrashPage his = new TrashPage(this);
+        stage.setScene(his.getScene());
+        stage.show();
+    }
+
+    public void showDefaultPage() {
+        DefaultPage his = new DefaultPage(this);
         stage.setScene(his.getScene());
         stage.show();
     }

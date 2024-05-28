@@ -72,7 +72,7 @@ public class TrashPage {
         });
         nilai.setTextFormatter(textFormatter);
         kembali.setOnAction(e -> {
-            app.showHomePage();
+            app.showDefaultPage();
         });
         submit.setOnAction(e -> {
             String nama = UserController.user.getUsername().getValue();
@@ -83,7 +83,7 @@ public class TrashPage {
             Trash trash = new Trash(nama, type, brt, lokasi, waktu);
             trashDAO.addTrash(trash);
 
-            app.showHistoryPage();
+            app.showDefaultPage();
         });
         nanya.selectedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {

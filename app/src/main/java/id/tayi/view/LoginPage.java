@@ -86,7 +86,7 @@ public class LoginPage {
             String nama = username.getText();
             String pass = password.getText();
             if(userDAO.checkLogin(nama, pass).equals("done")){
-                app.showHomePage();
+                app.showDefaultPage();
             } else {
                 info.setText(userDAO.checkLogin(nama, pass));
                 info.setVisible(true);

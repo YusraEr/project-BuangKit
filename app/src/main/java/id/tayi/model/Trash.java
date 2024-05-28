@@ -21,6 +21,14 @@ public class Trash {
         this.alamat = new SimpleStringProperty(alamat);
         this.waktu = new SimpleStringProperty(waktu);
     }
+    public Trash(int id, String username, String type, double berat, String alamat,
+            String waktu) {
+        this.username = new SimpleStringProperty(username);
+        this.type = new SimpleStringProperty(type);
+        this.berat = new SimpleDoubleProperty(berat);
+        this.alamat = new SimpleStringProperty(alamat);
+        this.waktu = new SimpleStringProperty(waktu);
+    }
 
     public int getId() {
         return id;

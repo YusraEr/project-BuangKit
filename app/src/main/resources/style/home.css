@@ -5,7 +5,6 @@
   -fx-background-size: 1366, 696;
   -fx-background-repeat: no-repeat;
   -fx-padding: 50px, 100px, 50px, 100px;
-  -fx-background-color: black;
 }
 .togle {
   -fx-spacing: 5px;
@@ -51,9 +50,7 @@
   -fx-font-family: Poppins, sans-serif;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 5, 0, 0, 3);
 }
-.header:hover {
-  /* -fx-text-fill: rgb(253, 0, 0); */
-}
+
 #duo {
   -fx-max-height: 200px;
   -fx-min-height: 200px;
@@ -101,8 +98,28 @@
   -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0, 2, 2);
 }
 #poin {
-  -fx-text-fill: white;
+  -fx-text-fill: #006e00;
+  -fx-background-color: rgb(255, 255, 255);
   -fx-font-family: Poppins, sans-serif;
   -fx-font-size: 30px;
   -fx-text-alignment: left;
+  -fx-font-weight: bold;
+}
+#nama {
+  -fx-font-family: Poppins, sans-serif;
+  -fx-text-fill: #006e00;
+  -fx-text-alignment: left;
+  -fx-font-size: 20px;
+  -fx-font-weight: bold;
+}
+#info {
+  -fx-background-color: rgb(255, 255, 255);
+  -fx-font-family: Poppins, sans-serif;
+  -fx-text-alignment: left;
+  -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.5), 15, 0, 2, 2);
+  -fx-max-height: 100px;
+  -fx-max-width: 300px;
+  -fx-pref-width: 300px;
+  -fx-background-radius : 15px;
+  -fx-padding: 10px;
 }
