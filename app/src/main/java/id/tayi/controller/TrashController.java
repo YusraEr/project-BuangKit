@@ -14,7 +14,7 @@ public class TrashController {
         String sql = "INSERT INTO countedTrash(username, type, berat, lokasi, waktu) VALUES(?,?,?,?,?)";
         try (Connection conn = DatabaseConnector.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, trash.getusername().getValue());
+            pstmt.setString(1, trash.getUsername().getValue());
             pstmt.setString(2, trash.getType().getValue());
             pstmt.setDouble(3, trash.getBerat().getValue());
             pstmt.setString(4, trash.getAlamat().getValue());
@@ -44,6 +44,7 @@ public class TrashController {
                         rs.getString("lokasi"),
                         rs.getString("waktu"));
                 trashList.add(trash);
+                
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());

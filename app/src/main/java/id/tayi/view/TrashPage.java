@@ -6,6 +6,8 @@ import java.time.format.DateTimeFormatter;
 import id.tayi.App;
 import id.tayi.controller.TrashController;
 import id.tayi.controller.UserController;
+import id.tayi.model.MainPage;
+import id.tayi.model.ScenePage;
 import id.tayi.model.Trash;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -19,7 +21,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-public class TrashPage {
+public class TrashPage implements MainPage, ScenePage{
     private App app;
     private Scene scene;
     private TrashController trashDAO = new TrashController();

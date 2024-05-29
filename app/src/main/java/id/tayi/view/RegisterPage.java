@@ -2,6 +2,8 @@ package id.tayi.view;
 
 import id.tayi.App;
 import id.tayi.controller.UserController;
+import id.tayi.model.MainPage;
+import id.tayi.model.ScenePage;
 import id.tayi.model.User;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -16,7 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-public class RegisterPage {
+public class RegisterPage implements MainPage, ScenePage{
     private App app;
     private Scene scene;
     private UserController userDAO = new UserController();

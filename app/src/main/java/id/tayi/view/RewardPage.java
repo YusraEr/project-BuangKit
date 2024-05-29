@@ -1,29 +1,15 @@
 package id.tayi.view;
 
-import java.util.Optional;
-
-import id.tayi.App;
-import id.tayi.controller.UserController;
+import id.tayi.model.MainPage;
+import id.tayi.model.RootPage;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-public class RewardPage {
-    private App app;
-    private Scene scene;
+public class RewardPage implements MainPage, RootPage{
     private StackPane content;
 
-    public RewardPage(App app) {
-        this.app = app;
-        initialize();
-    }
     public RewardPage() {
         initialize();
     }
@@ -36,14 +22,12 @@ public class RewardPage {
 
         poin.setId("poin");
         info.setId("info");
-        nama.setId("nama");
+        nama.getStyleClass().add("nama");
 
-        info.setAlignment(Pos.CENTER_LEFT);
         // nama.textProperty().bind(UserController.user.getUsername());
         // poin.textProperty().bind(UserController.user.getPoints().asString());
-
-        content.setAlignment(Pos.CENTER);
-        content.setId("background");
+        // info.setAlignment(Pos.TOP_LEFT);
+        StackPane.setAlignment(info, Pos.TOP_LEFT);
     }
 
     public StackPane getContent() {

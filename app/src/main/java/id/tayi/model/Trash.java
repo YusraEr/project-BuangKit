@@ -23,6 +23,7 @@ public class Trash {
     }
     public Trash(int id, String username, String type, double berat, String alamat,
             String waktu) {
+        this.id = id;
         this.username = new SimpleStringProperty(username);
         this.type = new SimpleStringProperty(type);
         this.berat = new SimpleDoubleProperty(berat);
@@ -54,11 +55,11 @@ public class Trash {
         this.waktu.setValue(waktu);
     }
 
-    public StringProperty getusername() {
+    public StringProperty getUsername() {
         return username;
     }
 
-    public void setusername(String username) {
+    public void setUsername(String username) {
         this.username.setValue(username);
     }
 
@@ -77,4 +78,5 @@ public class Trash {
     public void setBerat(double berat) {
         this.berat.setValue(berat);
     }
+
 }

@@ -1,11 +1,8 @@
 package id.tayi;
 
 import id.tayi.view.DefaultPage;
-import id.tayi.view.HistoryPage;
-import id.tayi.view.HomePage;
 import id.tayi.view.LoginPage;
 import id.tayi.view.RegisterPage;
-import id.tayi.view.RewardPage;
 import id.tayi.view.TrashPage;
 import javafx.application.Application;
 import javafx.scene.image.Image;
@@ -20,7 +17,7 @@ public class App extends Application {
         stage.setTitle("BuangKit");
         stage.getIcons().add(new Image(getClass().getResource("/images/logo2.png").toExternalForm()));
 
-        showDefaultPage();
+        showLoginPage();
     }
 
     public void showLoginPage() {

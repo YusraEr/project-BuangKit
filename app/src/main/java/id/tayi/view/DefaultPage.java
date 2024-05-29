@@ -3,6 +3,8 @@ package id.tayi.view;
 import java.util.Optional;
 
 import id.tayi.App;
+import id.tayi.model.MainPage;
+import id.tayi.model.ScenePage;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Pos;
@@ -17,7 +19,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 
-public class DefaultPage {
+public class DefaultPage implements MainPage, ScenePage{
     private App app;
     private Scene scene;
     private StackPane root;
@@ -28,11 +30,14 @@ public class DefaultPage {
     }
 
     public void initialize() {
+        ToggleGroup nav = new ToggleGroup();
+        RewardPage rPage = new RewardPage();
+        HistoryPage hPage = new HistoryPage();
         ToggleButton home = new ToggleButton("Beranda");
+        HomePage homePage = new HomePage();
         ToggleButton tukar = new ToggleButton("Tukar");
         ToggleButton logout = new ToggleButton("Logout");
         ToggleButton riwayat = new ToggleButton("Riwayat");
-        ToggleGroup nav = new ToggleGroup();
         HBox bar = new HBox(10, home, riwayat, tukar, logout);
         root = new StackPane();
         scene = new Scene(root, 1366, 693);
@@ -54,6 +59,8 @@ public class DefaultPage {
         home.setUserData("Home");
         riwayat.setUserData("Riwayat");
         tukar.setUserData("Tukar");
+        
+
 
         nav.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
@@ -62,23 +69,21 @@ public class DefaultPage {
                     String selectedPage = newValue.getUserData().toString();
                     switch (selectedPage) {
                         case "Home":
-                            HomePage h = new HomePage();
                             root.getChildren().clear();
-                            StackPane tmp = h.getContent();
-                            root.getChildren().addAll(tmp , bar);
-                            Button start = (Button)tmp.getChildren().get(3);
-                            start.setOnAction(e ->{
+                            StackPane tmp = homePage.getContent();
+                            root.getChildren().addAll(tmp, bar);
+                            Button start = (Button) tmp.getChildren().get(3);
+                            start.setOnAction(e -> {
                                 app.showTrashPage();
                             });
                             break;
                         case "Riwayat":
-                            System.out.println("ini riwayat");
-                            HistoryPage n = new HistoryPage(app);
                             root.getChildren().clear();
-                            root.getChildren().addAll(n.getContent(), bar);
+                            root.getChildren().addAll(hPage.getContent(), bar);
                             break;
                         case "Tukar":
-                            System.out.println("ini tukar");
+                            root.getChildren().clear();
+                            root.getChildren().addAll(rPage.getContent(), bar);
                             break;
                         case "Logout":
                             logout.setOnAction(e -> {
@@ -86,7 +91,6 @@ public class DefaultPage {
                                 log.setTitle("Konfirmasi Logout");
                                 log.setHeaderText(null);
                                 log.setContentText("Apakah anda yakin ingin logout dari akun anda?");
-
                                 Optional<ButtonType> result = log.showAndWait();
                                 if (result.isPresent() && result.get() == ButtonType.OK)
                                     app.showLoginPage();
@@ -99,14 +103,6 @@ public class DefaultPage {
             }
         });
         nav.selectToggle(home);
-
-        // home.setOnAction(e -> {
-        // app.showHomePage();
-        // });
-
-        // tukar.setOnAction(e -> {
-        // app.showRewardPage();
-        // });
 
         scene.getStylesheets().add("/style/home.css");
         StackPane.setAlignment(bar, Pos.TOP_RIGHT);

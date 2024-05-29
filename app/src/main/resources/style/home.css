@@ -16,6 +16,20 @@
   -fx-background-size: 150px, 50px;
   -fx-font-weight: bold;
 }
+.field {
+  -fx-font-size: 16px;
+  -fx-text-alignment: center;
+  -fx-font-weight: bold;
+  -fx-font-family: Montserrat, sans-serif;
+  -fx-min-height: 40px;
+  -fx-max-width: 400px;
+  -fx-min-width: 400px;
+  -fx-background-radius: 10px;
+  -fx-background-color: rgb(255, 255, 255);
+  -fx-text-fill: #006e00;
+  -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0, 2, 2);
+}
+
 #selected {
   -fx-spacing: 5px;
   -fx-text-fill: #004e00;
@@ -31,15 +45,14 @@
   -fx-effect: innershadow(gaussian, rgb(0, 0, 0, 0.5), 5, 0, 2, 2);
   -fx-text-fill: #004e00;
 }
-.togle:active {
+.togle:selected {
   -fx-background-color: #ffff;
   -fx-text-fill: #004e00;
 }
 #bar {
   -fx-background-color: transparent;
-}
-#logo {
-  -fx-background-size: 200px, 200px;
+  -fx-max-width: 600px;
+  -fx-max-height: 40px;
 }
 .header {
   -fx-font-size: 70px;
@@ -47,10 +60,9 @@
   -fx-font-weight: bold;
   -fx-text-alignment: left;
   -fx-spacing: 5px;
-  -fx-font-family: Poppins, sans-serif;
+  -fx-font-family: Monserrat, sans-serif;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 5, 0, 0, 3);
 }
-
 #duo {
   -fx-max-height: 200px;
   -fx-min-height: 200px;
@@ -61,23 +73,21 @@
   -fx-font-family: Montserrat, sans-serif;
   -fx-font-size: 20px;
   -fx-text-fill: #ffffff;
-  /* -fx-background-color: rgb(255, 255, 255); */
   -fx-background-radius: 5px;
   -fx-text-alignment: left;
   -fx-spacing: -10;
   -fx-font-weight: bold;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.801), 3, 0.1, 1, 3);
-  /* -fx-padding: 15px; */
 }
 .nama {
-  -fx-font-family: Poppins, sans-serif;
+  -fx-font-family: Monserrat, sans-serif;
   -fx-text-fill: white;
   -fx-text-alignment: left;
   -fx-font-size: 20px;
   -fx-font-weight: bold;
 }
 #start {
-  -fx-font-family: Poppins, sans-serif;
+  -fx-font-family: Monserrat, sans-serif;
   -fx-text-alignment: center;
   -fx-font-size: 20px;
   -fx-font-weight: bold;
@@ -92,34 +102,30 @@
   -fx-text-fill: #007e00;
   -fx-background-color: white;
 }
-#start:active {
-  -fx-text-fill: #007e00;
-  -fx-background-color: white;
-  -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0, 2, 2);
-}
+
 #poin {
-  -fx-text-fill: #006e00;
-  -fx-background-color: rgb(255, 255, 255);
-  -fx-font-family: Poppins, sans-serif;
+  -fx-text-fill: #ffffff;
+  -fx-font-family: Montserrat, sans-serif;
   -fx-font-size: 30px;
   -fx-text-alignment: left;
   -fx-font-weight: bold;
 }
-#nama {
-  -fx-font-family: Poppins, sans-serif;
-  -fx-text-fill: #006e00;
-  -fx-text-alignment: left;
-  -fx-font-size: 20px;
-  -fx-font-weight: bold;
-}
+
 #info {
-  -fx-background-color: rgb(255, 255, 255);
-  -fx-font-family: Poppins, sans-serif;
   -fx-text-alignment: left;
-  -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.5), 15, 0, 2, 2);
   -fx-max-height: 100px;
   -fx-max-width: 300px;
-  -fx-pref-width: 300px;
-  -fx-background-radius : 15px;
+  -fx-pref-width: 250px;
+  -fx-background-radius : 10px;
   -fx-padding: 10px;
+}
+.isi{
+  -fx-max-height: 530px;
+  -fx-min-width: 450px;
+  -fx-max-width: 450px;
+  -fx-padding: 40px;
+  -fx-spacing: 20px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 20, 0, 0, 4);
+  -fx-alignment: center;
+  -fx-background-color: #ffffff;
 }
