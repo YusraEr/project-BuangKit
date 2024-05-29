@@ -47,20 +47,18 @@ public class DefaultPage implements MainPage, ScenePage{
         bar.setId("bar");
         bar.setAlignment(Pos.TOP_RIGHT);
         home.getStyleClass().add("togle");
-        logout.getStyleClass().add("togle");
         tukar.getStyleClass().add("togle");
+        logout.getStyleClass().add("togle");
         riwayat.getStyleClass().add("togle");
 
-        logout.setToggleGroup(nav);
         home.setToggleGroup(nav);
-        riwayat.setToggleGroup(nav);
         tukar.setToggleGroup(nav);
-        logout.setUserData("Logout");
+        logout.setToggleGroup(nav);
+        riwayat.setToggleGroup(nav);
         home.setUserData("Home");
-        riwayat.setUserData("Riwayat");
         tukar.setUserData("Tukar");
-        
-
+        logout.setUserData("Logout");
+        riwayat.setUserData("Riwayat");
 
         nav.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
@@ -95,9 +93,7 @@ public class DefaultPage implements MainPage, ScenePage{
                                 if (result.isPresent() && result.get() == ButtonType.OK)
                                     app.showLoginPage();
                             });
-                            System.out.println("ini log");
                             break;
-
                     }
                 }
             }

@@ -31,7 +31,7 @@ public class RegisterPage implements MainPage, ScenePage{
     public void initialize() {
         Button go = new Button("Go!");
         Label plus = new Label("+62");
-        Label info = new Label("Username tidak tersedia");
+        Label info = new Label("Username sudah ada");
         Button back = new Button("Kembali");
         Label header = new Label("Daftar");
         TextField nomor = new TextField();
@@ -81,7 +81,7 @@ public class RegisterPage implements MainPage, ScenePage{
                 info.setText("Harap isi data diri anda");
                 info.setVisible(true);
             } else if (userDAO.isUsernameExists(name)) {
-                info.setText("Username tidak tersedia");
+                info.setText("Username sudah ada");
                 info.setVisible(true);
             } else {
                 Alert infoAlert = new Alert(AlertType.INFORMATION);

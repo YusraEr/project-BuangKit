@@ -1,5 +1,6 @@
 package id.tayi.view;
 
+import id.tayi.controller.UserController;
 import id.tayi.model.MainPage;
 import id.tayi.model.RootPage;
 import javafx.geometry.Pos;
@@ -15,8 +16,8 @@ public class RewardPage implements MainPage, RootPage{
     }
 
     public void initialize() {
-        Label nama = new Label("Yusra Erlangga Putra");
-        Label poin = new Label("00000");
+        Label nama = new Label();
+        Label poin = new Label();
         VBox info = new VBox(nama, poin);
         content = new StackPane(info);
 
@@ -24,9 +25,9 @@ public class RewardPage implements MainPage, RootPage{
         info.setId("info");
         nama.getStyleClass().add("nama");
 
-        // nama.textProperty().bind(UserController.user.getUsername());
-        // poin.textProperty().bind(UserController.user.getPoints().asString());
-        // info.setAlignment(Pos.TOP_LEFT);
+        nama.textProperty().bind(UserController.user.getUsername());
+        poin.textProperty().bind(UserController.user.getPoints().asString());
+        info.setAlignment(Pos.TOP_LEFT);
         StackPane.setAlignment(info, Pos.TOP_LEFT);
     }
 

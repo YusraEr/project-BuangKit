@@ -21,7 +21,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-public class TrashPage implements MainPage, ScenePage{
+public class TrashPage implements MainPage, ScenePage {
     private App app;
     private Scene scene;
     private TrashController trashDAO = new TrashController();
@@ -73,6 +73,7 @@ public class TrashPage implements MainPage, ScenePage{
             return null;
         });
         nilai.setTextFormatter(textFormatter);
+        
         kembali.setOnAction(e -> {
             app.showDefaultPage();
         });

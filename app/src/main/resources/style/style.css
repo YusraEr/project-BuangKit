@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Montserrat&display=swap');
+@font-face {
+  font-family: "Arial";
+  src: url('/font/Poppins-Bold.ttf') format('truetype');
+}
 #background {
   -fx-background-image: url(/images/bg.jpg);
   -fx-background-position: center;
@@ -20,7 +23,7 @@
 }
 .button {
   -fx-background-color: #007e00;
-  -fx-font-family: "Montserrat", sans-serif;
+  -fx-font-family: "Arial", sans-serif;
   -fx-font-weight: bold;
   -fx-font-size: 17px;
   -fx-pref-height: 50px;
@@ -39,7 +42,7 @@
 }
 .field {
   -fx-font-size: 16px;
-  -fx-font-family: Montserrat, sans-serif;
+  -fx-font-family: Arial, sans-serif;
   -fx-min-height: 60px;
   -fx-max-width: 400px;
   -fx-min-width: 400px;
@@ -62,7 +65,7 @@
 .teks {
   -fx-font-size: 20px;
   -fx-font-weight: bold;
-  -fx-font-family: "Montserrat", sans-serif;
+  -fx-font-family: "Arial", sans-serif;
   -fx-text-fill: rgb(7, 1, 1);
 }
 
@@ -88,7 +91,7 @@
 #plus {
   -fx-font-size: 17px;
   -fx-min-width: 40px;
-  -fx-font-family: Montserrat, sans-serif;
+  -fx-font-family: Arial, sans-serif;
   -fx-text-fill: #007e00;
   -fx-alignment: center;
   -fx-font-weight: bold;
@@ -96,14 +99,14 @@
 
 #header {
   -fx-font-size: 40px;
-  -fx-font-family: "Montserrat", sans-serif;
+  -fx-font-family: "Arial", sans-serif;
   -fx-text-fill: #007e00;
   -fx-font-weight: bold;
 }
 
 #nomor {
   -fx-font-size: 16px;
-  -fx-font-family: Montserrat, sans-serif;
+  -fx-font-family: Arial, sans-serif;
   -fx-min-height: 60px;
   -fx-max-width: 350px;
   -fx-min-width: 350px;
@@ -115,7 +118,7 @@
 }
 #back {
   -fx-background-color: #007e00;
-  -fx-font-family: "Montserrat", sans-serif;
+  -fx-font-family: "Arial", sans-serif;
   -fx-font-weight: bold;
   -fx-font-size: 15px;
   -fx-pref-height: 50px;
@@ -141,5 +144,5 @@
 .info{
   -fx-font-size: 10px;
   -fx-text-fill: rgb(216, 0, 0);
-  -fx-font-family: Montserrat, sans-serif;
+  -fx-font-family: Arial, sans-serif;
 }

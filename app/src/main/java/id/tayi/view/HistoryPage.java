@@ -44,7 +44,7 @@ public class HistoryPage implements MainPage, RootPage {
         HBox main = new HBox(10, detail, list);
         content = new StackPane(info, main);
 
-        Label username = new Label("AAAAAAAAa");
+        Label username = new Label();
         username.textProperty().bind(this.username);
         username.setAlignment(Pos.CENTER);
         Label type = new Label();
@@ -60,24 +60,28 @@ public class HistoryPage implements MainPage, RootPage {
         waktu.textProperty().bind(this.waktu);
         waktu.setAlignment(Pos.CENTER);
 
-        username.getStyleClass().add("field");
         type.getStyleClass().add("field");
         berat.getStyleClass().add("field");
-        alamat.getStyleClass().add("field");
         waktu.getStyleClass().add("field");
+        alamat.getStyleClass().add("field");
+        username.getStyleClass().add("field");
         detail.getChildren().addAll(username, type, berat, alamat, waktu);
 
         poin.setId("poin");
         info.setId("info");
-        detail.getStyleClass().add("isi");
         nama.getStyleClass().add("nama");
+        detail.getStyleClass().add("isi");
         nama.textProperty().bind(UserController.user.getUsername());
         poin.textProperty().bind(UserController.user.getPoints().asString());
-        list.setContent(daftar);
         list.setMaxSize(430, 530);
+        list.setContent(daftar);
 
-        for (Trash i : isi) {
-            daftar.getChildren().add(new ListContent(i, this));
+        if (isi != null) {
+            for (Trash i : isi) {
+                daftar.getChildren().add(new ListContent(i, this));
+            }
+        } else {
+            daftar.getChildren().add(new Label("Tidak ada Riwayat"));
         }
 
         StackPane.setAlignment(info, Pos.TOP_LEFT);

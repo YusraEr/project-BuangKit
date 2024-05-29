@@ -1,13 +1,10 @@
 package id.tayi.view;
 
 import id.tayi.model.Trash;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.StringProperty;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
 public class ListContent extends HBox {
     HistoryPage history;
@@ -30,20 +27,18 @@ public class ListContent extends HBox {
         Label weight = new Label(trash.getBerat().getValue().toString() + " Kg");
         Label time = new Label("Waktu : " + trash.getWaktu().getValue());
         Button i = new Button("i");
+
+        jenis.setStyle("-fx-font-size: 15px; -fx-text-fill: #006e00; -fx-font-family: Arial; -fx-font-weight: bold;-fx-text-alignment: left; ");
+        weight.setStyle("-fx-font-size: 15px; -fx-text-fill: black; -fx-font-family: Arial;");
+        time.setStyle("-fx-font-size: 15px; -fx-text-fill: black; -fx-font-family: Arial;");
+        
+        this.setStyle("-fx-min-height: 40px; -fx-max-width: 400px; -fx-min-width: 420px; -fx-background-color: rgb(255, 255, 255);-fx-padding:5px;");
         this.getChildren().addAll(jenis, weight, time, i);
         this.setSpacing(10);
-
-        jenis.setStyle(
-                "-fx-font-size: 15px; -fx-text-fill: #006e00; -fx-font-family: Arial; -fx-font-weight: bold;-fx-text-alignment: left; ");
-        weight.setStyle("-fx-font-size: 15px; -fx-text-fill: #bbbb; -fx-font-family: Arial;");
-        time.setStyle("-fx-font-size: 15px; -fx-text-fill: #bbbb; -fx-font-family: Arial;");
-        i.setStyle(
-                "-fx-font-size: 15px; -fx-text-fill: #bbbb; -fx-font-family: Arial; -fx-background-color: #006e00; -fx-background-radius: 50px; -fx-font-weight: bold;");
-        this.setStyle(
-                "-fx-min-height: 40px; -fx-max-width: 400px; -fx-min-width: 420px; -fx-background-color: rgb(255, 255, 255);-fx-padding:5px;");
-        i.setAlignment(Pos.CENTER_RIGHT);
-
         this.setAlignment(Pos.CENTER);
+
+        i.setStyle("-fx-font-size: 15px; -fx-text-fill: white; -fx-font-family: Arial; -fx-background-color: #006e00; -fx-background-radius: 50px; -fx-font-weight: bold;");
+        i.setAlignment(Pos.CENTER_RIGHT);
         i.setOnAction(e -> {
             history.ganti(username, type, berat, alamat, waktu);
             System.out.println(trash.getId());

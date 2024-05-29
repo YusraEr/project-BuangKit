@@ -20,7 +20,6 @@ public class UserController {
             pstmt.setString(3, user.getNomor().getValue());
             pstmt.setString(4, user.getKota().getValue());
             pstmt.executeUpdate();
-            System.out.println("User added successfully");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -35,7 +34,7 @@ public class UserController {
 
             ResultSet userRs = checkUserStmt.executeQuery();
             if (userRs.next() && userRs.getInt(1) == 0) {
-                return "Username tidak ditemukan.";
+                return "Username tidak terdaftar.";
             }
         } catch (SQLException e) {
             return e.getMessage();

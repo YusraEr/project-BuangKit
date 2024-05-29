@@ -94,7 +94,7 @@ public class LoginPage implements MainPage, ScenePage{
                 info.setVisible(true);
             }
         });
-        
+
         daftar.setOnAction(e ->{
             app.showRegisterPage();
         });
