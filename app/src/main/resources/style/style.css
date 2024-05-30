@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "Arial";
-  src: url('/font/Poppins-Bold.ttf') format('truetype');
-}
+
 #background {
   -fx-background-image: url(/images/bg.jpg);
   -fx-background-position: center;

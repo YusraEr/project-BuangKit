@@ -22,11 +22,11 @@ import javafx.scene.layout.VBox;
 public class HistoryPage implements MainPage, RootPage {
     private StackPane content;
     private TrashController trashDAO = new TrashController();
-    StringProperty username = new SimpleStringProperty("Tidak ada data");
-    StringProperty type = new SimpleStringProperty("Tidak ada data");
+    StringProperty username = new SimpleStringProperty("-");
+    StringProperty type = new SimpleStringProperty("-");
     DoubleProperty berat = new SimpleDoubleProperty(0.0);
-    StringProperty alamat = new SimpleStringProperty("Tidak ada data");
-    StringProperty waktu = new SimpleStringProperty("Tidak ada data");
+    StringProperty alamat = new SimpleStringProperty("-");
+    StringProperty waktu = new SimpleStringProperty("-");
     ArrayList<Trash> isi;
 
     public HistoryPage() {
@@ -39,40 +39,38 @@ public class HistoryPage implements MainPage, RootPage {
         Label poin = new Label();
         VBox daftar = new VBox(5);
         VBox info = new VBox(nama, poin);
-        VBox detail = new VBox();
+        VBox detail = new VBox(-10);
         ScrollPane list = new ScrollPane(daftar);
         HBox main = new HBox(10, detail, list);
         content = new StackPane(info, main);
 
-        Label username = new Label();
-        username.textProperty().bind(this.username);
-        username.setAlignment(Pos.CENTER);
         Label type = new Label();
-        type.textProperty().bind(this.type);
-        type.setAlignment(Pos.CENTER);
         Label berat = new Label();
-        berat.textProperty().bind(this.berat.asString("%.1f Kg"));
-        berat.setAlignment(Pos.CENTER);
-        Label alamat = new Label();
-        alamat.textProperty().bind(this.alamat);
-        alamat.setAlignment(Pos.CENTER);
         Label waktu = new Label();
-        waktu.textProperty().bind(this.waktu);
-        waktu.setAlignment(Pos.CENTER);
+        Label alamat = new Label();
+        Label username = new Label();
 
-        type.getStyleClass().add("field");
-        berat.getStyleClass().add("field");
-        waktu.getStyleClass().add("field");
-        alamat.getStyleClass().add("field");
-        username.getStyleClass().add("field");
-        detail.getChildren().addAll(username, type, berat, alamat, waktu);
+        type.textProperty().bind(this.type);
+        waktu.textProperty().bind(this.waktu);
+        berat.textProperty().bind(this.berat.asString("%.1f Kg"));
+        alamat.textProperty().bind(this.alamat);
+        username.textProperty().bind(this.username);
+
+        detail.getChildren().addAll(
+                new ContentDetail("Username", username),
+                new ContentDetail("Jenis", type),
+                new ContentDetail("Waktu", waktu),
+                new ContentDetail("Berat", berat),
+                new ContentDetail("Alamat", alamat)
+        );
 
         poin.setId("poin");
         info.setId("info");
         nama.getStyleClass().add("nama");
         detail.getStyleClass().add("isi");
+        list.getStyleClass().add("isi");
         nama.textProperty().bind(UserController.user.getUsername());
-        poin.textProperty().bind(UserController.user.getPoints().asString());
+        poin.textProperty().bind(UserController.user.getPoints().asString("%d Pts"));
         list.setMaxSize(430, 530);
         list.setContent(daftar);
 

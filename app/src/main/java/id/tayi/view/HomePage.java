@@ -28,7 +28,7 @@ public class HomePage implements MainPage, RootPage{
         Label buang = new Label("Buang");
         Label bangkit = new Label("Bangkit");
         ImageView logo = new ImageView(new Image(getClass().getResource("/images/logo4.png").toExternalForm()));
-        VBox trio = new VBox(-40, buang, uang, bangkit);
+        VBox trio = new VBox(-20, buang, uang, bangkit);
         HBox duo = new HBox(logo, trio);
         Button start = new Button("Start!");
         content = new StackPane(duo, desc, nama, start);

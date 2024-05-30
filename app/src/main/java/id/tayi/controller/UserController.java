@@ -79,4 +79,16 @@ public class UserController {
         }
         return false;
     }
+
+    public void updateUserPoints(String username, int poin) {
+        String sql = "UPDATE users SET points = ? WHERE username = ?";
+        try (Connection conn = DatabaseConnector.connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, poin);
+            pstmt.setString(2, username);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

@@ -53,8 +53,8 @@ public class User {
     public IntegerProperty getPoints() {
         return points;
     }
-    public void setPoints(IntegerProperty points) {
-        this.points = points;
+    public void setPoints(int points) {
+        this.points.setValue(points);
     }
 
 }
