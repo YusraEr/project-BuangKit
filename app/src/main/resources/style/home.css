@@ -6,6 +6,12 @@
   -fx-background-repeat: no-repeat;
   -fx-padding: 50px, 100px, 50px, 100px;
 }
+#header {
+  -fx-font-size: 40px;
+  -fx-font-family: "Montserrat", sans-serif;
+  -fx-text-fill: #007e00;
+  -fx-font-weight: bold;
+}
 .togle {
   -fx-spacing: 5px;
   -fx-text-fill: #ffff;
@@ -52,7 +58,7 @@
   -fx-min-width: 100px;
   -fx-max-width: 100px;
   -fx-font-weight: bold;
-  -fx-text-fill: #000;
+  -fx-text-fill: #006e00;
 }
 
 #selected {
@@ -121,7 +127,7 @@
   -fx-font-weight: bold;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.801), 10, 0, 0, 0);
 }
-#start {
+.start {
   -fx-font-family: Arial, sans-serif;
   -fx-text-alignment: center;
   -fx-font-size: 20px;
@@ -134,7 +140,26 @@
   -fx-padding: 10px;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.801), 10, 0, 3, 3);
 }
-#start:hover {
+.buang {
+  -fx-font-family: Arial, sans-serif;
+  -fx-text-alignment: center;
+  -fx-font-size: 50px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ffff;
+  -fx-background-color: #007e00;
+  -fx-background-radius:100px;
+  -fx-padding: 10px;
+  -fx-max-height: 80px;
+  -fx-min-height: 80px;
+  -fx-max-width: 80px;
+  -fx-min-width: 80px;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.801), 10, 0, 3, 3);
+}
+.buang:hover{
+  -fx-text-fill: #007e00;
+  -fx-background-color: white;
+}
+.start:hover {
   -fx-text-fill: #007e00;
   -fx-background-color: white;
 }
@@ -157,7 +182,7 @@
   -fx-padding: 10px;
 }
 .isi{
-  -fx-max-height: 530px;
+  -fx-max-height: 500px;
   -fx-min-width: 450px;
   -fx-max-width: 450px;
   -fx-padding: 10px;
@@ -165,7 +190,7 @@
   -fx-spacing: 20px;
   -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 20, 0, 0, 4);
   -fx-alignment: center;
-  -fx-background-color: #bbbb;
+  -fx-background-color: #faf4f4;
 }
 .meh{
   -fx-max-height: 530px;
@@ -176,6 +201,9 @@
   -fx-spacing: 20px;
   -fx-alignment: center;
   -fx-background-color: #ffffff65;
+}
+.meh:hover{
+  -fx-background-color : #007e00;
 }
 
 .isi .view-port{

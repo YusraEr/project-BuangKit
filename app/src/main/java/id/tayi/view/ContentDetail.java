@@ -27,6 +27,7 @@ public class ContentDetail extends HBox{
         
         this.getChildren().addAll(nama, label);
         this.setAlignment(Pos.CENTER);
-        this.setPrefSize(100, 60);
+        this.setPrefSize(100, 50);
+        this.setMaxSize(200, 50);
     }
 }

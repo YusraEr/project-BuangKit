@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
-import com.google.common.base.Optional;
-
 import id.tayi.App;
 import id.tayi.controller.TrashController;
 import id.tayi.controller.UserController;
@@ -18,7 +16,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -27,7 +24,6 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class TrashPage implements MainPage, ScenePage {
@@ -103,7 +99,7 @@ public class TrashPage implements MainPage, ScenePage {
 
             if (type != null && brt > 0 && (lokasi != null || lokasi == "Bank Sampah")) {
                 Trash trash = new Trash(nama, type, brt, lokasi, waktu);
-                Alert log = new Alert(AlertType.CONFIRMATION);
+                Alert log = new Alert(AlertType.INFORMATION);
                 log.setTitle("Status sampah");
                 log.setHeaderText(null);
                 log.setContentText("Sampah berhasil dilaporkan");
@@ -121,7 +117,7 @@ public class TrashPage implements MainPage, ScenePage {
                 app.showDefaultPage();
             } else {
                 reset(nilai, alamat);
-                Alert log = new Alert(AlertType.CONFIRMATION);
+                Alert log = new Alert(AlertType.INFORMATION);
                 log.setTitle("Status sampah");
                 log.setHeaderText(null);
                 log.setContentText("Sampah gagal dilaporkan");

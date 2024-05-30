@@ -31,18 +31,16 @@ public class DefaultPage implements MainPage, ScenePage{
 
     public void initialize() {
         ToggleGroup nav = new ToggleGroup();
-        RewardPage rPage = new RewardPage();
-        HistoryPage hPage = new HistoryPage();
+        RewardPage rPage = new RewardPage(app);
+        HistoryPage hPage = new HistoryPage(app);
         ToggleButton home = new ToggleButton("Beranda");
-        HomePage homePage = new HomePage();
+        HomePage homePage = new HomePage(app);
         ToggleButton tukar = new ToggleButton("Tukar");
         ToggleButton logout = new ToggleButton("Logout");
         ToggleButton riwayat = new ToggleButton("Riwayat");
         HBox bar = new HBox(10, home, riwayat, tukar, logout);
         root = new StackPane();
         scene = new Scene(root, 1366, 693);
-
-        // riwayat.setId("selected");
 
         bar.setId("bar");
         bar.setAlignment(Pos.TOP_RIGHT);

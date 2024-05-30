@@ -1,11 +1,13 @@
 package id.tayi.view;
 
+import id.tayi.App;
 import id.tayi.controller.UserController;
 import id.tayi.model.MainPage;
 import id.tayi.model.RootPage;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBase;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,8 +17,10 @@ import javafx.scene.layout.VBox;
 
 public class HomePage implements MainPage, RootPage{
     private StackPane content;
+    private App app;
 
-    public HomePage() {
+    public HomePage(App app) {
+        this.app = app;
         initialize();
     }
 
@@ -39,13 +43,13 @@ public class HomePage implements MainPage, RootPage{
         duo.setId("duo");
         desc.setId("desc");
         logo.setId("logo");
-        start.setId("start");
         logo.setFitWidth(190);
         logo.setFitHeight(190);
-        nama.getStyleClass().add("nama");
         duo.setAlignment(Pos.CENTER_LEFT);
         trio.setAlignment(Pos.CENTER_LEFT);
+        nama.getStyleClass().add("nama");
         uang.getStyleClass().add("header");
+        start.getStyleClass().add("start");
         buang.getStyleClass().add("header");
         bangkit.getStyleClass().add("header");
 
@@ -54,6 +58,9 @@ public class HomePage implements MainPage, RootPage{
         } else {
             nama.setText(nama.getText() + "guest");
         }
+        buang.setOnMouseClicked(e ->{
+            app.showTrashPage();
+        });
         content.setAlignment(Pos.CENTER);
     }
 
