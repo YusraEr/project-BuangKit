@@ -86,7 +86,7 @@ public class HistoryPage implements MainPage, RootPage {
         list.setContent(daftar);
         info2.setAlignment(Pos.CENTER_LEFT);
         nama.textProperty().bind(UserController.user.getUsername());
-        poin.textProperty().bind(UserController.user.getPoints().asString("%,d Pts"));
+        poin.textProperty().bind(UserController.user.getPoints().asString("%,d"));
 
         if (isi != null) {
             for (Trash i : isi) {

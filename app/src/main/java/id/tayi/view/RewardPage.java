@@ -49,7 +49,7 @@ public class RewardPage implements MainPage, RootPage {
         buang.getStyleClass().add("buang");
 
         nama.textProperty().bind(UserController.user.getUsername());
-        poin.textProperty().bind(UserController.user.getPoints().asString("%,d Pts"));
+        poin.textProperty().bind(UserController.user.getPoints().asString("%,d"));
         info.setAlignment(Pos.TOP_LEFT);
         grid.setAlignment(Pos.BOTTOM_CENTER);
         coin.setFitWidth(40);
