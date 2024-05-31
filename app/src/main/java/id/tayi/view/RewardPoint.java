@@ -147,7 +147,15 @@ public class RewardPoint extends Button {
             }
             return null;
         });
+        TextFormatter<String> textFormatter2 = new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")) {
+                return change;
+            }
+            return null;
+        });
         nomoran.setTextFormatter(textFormatter);
+        poin.setTextFormatter(textFormatter2);
 
         scene.getStylesheets().add("/style/trash.css");
         kembali.setOnAction(e -> {
@@ -155,15 +163,21 @@ public class RewardPoint extends Button {
         });
 
         submit.setOnAction(e -> {
-            if (namaPilihan.getValue() == null || poin.getText() == null || nomoran.getText() == null) {
+            if (Integer.parseInt(poin.getText()) > UserController.user.getPoints().getValue()) {
+                Alert log = new Alert(AlertType.WARNING);
+                log.setTitle(null);
+                log.setTitle("Gagal Submit");
+                log.setHeaderText(null);
+                log.setContentText("Poin kamu tidak mencukupi");
+                log.showAndWait();
+            } else if (namaPilihan.getValue() == null || poin.getText() == null || nomoran.getText() == null) {
                 Alert log = new Alert(AlertType.WARNING);
                 log.setTitle(null);
                 log.setTitle("Gagal submit");
                 log.setHeaderText(null);
                 log.setContentText("Field tidak boleh kosong");
                 log.showAndWait();
-            }
-             else if (Integer.parseInt(poin.getText()) < (min * 1000)) {
+            } else if (Integer.parseInt(poin.getText()) < (min * 1000)) {
                 Alert log = new Alert(AlertType.WARNING);
                 log.setTitle(null);
                 log.setTitle("Gagal submit");
