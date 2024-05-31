@@ -24,6 +24,7 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class TrashPage implements MainPage, ScenePage {
@@ -93,7 +94,7 @@ public class TrashPage implements MainPage, ScenePage {
             if (nanya.isSelected())
                 lokasi = "Bank Sampah";
 
-            // PopUp.LoadingPopUp(new Stage());
+            PopUp.LoadingPopUp(new Stage());
             PauseTransition pause = new PauseTransition(Duration.seconds(3));
             pause.play();
 
@@ -180,7 +181,6 @@ public class TrashPage implements MainPage, ScenePage {
     private void reset(TextField... args) {
         for (TextField i : args) {
             i.clear();
-            ;
         }
     }
 }

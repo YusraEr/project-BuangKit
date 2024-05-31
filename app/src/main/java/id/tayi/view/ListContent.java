@@ -44,5 +44,4 @@ public class ListContent extends HBox {
             System.out.println(trash.getId());
         });
     }
-
 }
