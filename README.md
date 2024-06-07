@@ -1,10 +1,10 @@
-## project-BuangKit
+# project-BuangKit
 BuangKit (Buang, Uang, Bangkit) adalah sebuah inovasi aplikasi dengan menerapkan sistem membuang sampah untuk mendapatkan uang dan bangkit dari bencana sampah pada era saat ini.
 
 # Informasi Tim
-Nama        : TAYI
-Instansi    : Universitas Hasanuddin
-Anggota     :
+## Nama        : TAYI
+## Instansi    : Universitas Hasanuddin
+## Anggota     :
 1. Yusra Erlangga Putra         H071231052 
 2. Thahirah Awlyah Zahra        H071221073 
 3. Muhammad Ikhsan Saputra      H071231083 
@@ -49,5 +49,17 @@ https://github.com/YusraEr/project-BuangKit.git
 Muhammad Thoriq Ali Said – Rabu, 29 Mei 2024
 
 # Demo Aplikasi
-Login Scene
+## Login Scene
 ![Login Scene](dokumentasi/loginScene.png)
+## Register Scene
+![Login Scene](dokumentasi/registerScene.png)
+## Home Scene
+![Login Scene](dokumentasi/homeScene.png)
+## History Scene
+![Login Scene](dokumentasi/historyScene.png)
+## Reward Scene
+![Login Scene](dokumentasi/rewardScene.png)
+## Point Scene
+![Login Scene](dokumentasi/pointExchange.png)
+## Trash Scene
+![Login Scene](dokumentasi/trashScene.png)

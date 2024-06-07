@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Arial:ital,wght@0,100..900;1,100..900&family=Arial&display=swap'); */
 
 #background {
-  -fx-background-image: url(/images/bgg.jpg);
+  -fx-background-image: url(/images/background.jpg);
   -fx-background-size: 1366, 696;
   -fx-background-repeat: no-repeat;
   -fx-padding: 50px, 100px, 50px, 100px;

@@ -6,7 +6,7 @@
   -fx-font-weight: bold;
 }
 #background {
-  -fx-background-image: url(/images/bg2.jpg);
+  -fx-background-image: url(/images/bgg.jpg);
   -fx-background-size: 1366, 696;
   -fx-background-repeat: no-repeat;
   -fx-padding: 50px, 100px, 50px, 100px;
