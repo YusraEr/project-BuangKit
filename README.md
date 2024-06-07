@@ -1,4 +1,4 @@
-# project-BuangKit
+## project-BuangKit
 BuangKit (Buang, Uang, Bangkit) adalah sebuah inovasi aplikasi dengan menerapkan sistem membuang sampah untuk mendapatkan uang dan bangkit dari bencana sampah pada era saat ini.
 
 # Informasi Tim
@@ -49,4 +49,5 @@ https://github.com/YusraEr/project-BuangKit.git
 Muhammad Thoriq Ali Said – Rabu, 29 Mei 2024
 
 # Demo Aplikasi
+Login Scene
 ![Login Scene](dokumentasi/loginScene.png)
