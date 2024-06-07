@@ -77,7 +77,7 @@ public class RegisterPage implements MainPage, ScenePage{
             String pass = password.getText();
             String nmr = nomor.getText();
             String kta = kota.getValue();
-            if (name == null || pass == null || nmr == null || kta == null) {
+            if (name.isEmpty() || pass.isEmpty() || nmr.isEmpty() || kta.isEmpty()) {
                 info.setText("Harap isi data diri anda");
                 info.setVisible(true);
             } else if (userDAO.isUsernameExists(name)) {

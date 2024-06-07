@@ -26,6 +26,9 @@ public class UserController {
     }
 
     public String checkLogin(String username, String password) {
+        if (username.isEmpty() || password.isEmpty()){
+            return "Field tidak boleh kosong";
+        }
         String checkUserSql = "SELECT COUNT(*) FROM users WHERE username = ?";
 
         try (Connection conn = DatabaseConnector.connect();

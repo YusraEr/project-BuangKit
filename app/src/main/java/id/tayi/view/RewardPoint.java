@@ -163,19 +163,19 @@ public class RewardPoint extends Button {
         });
 
         submit.setOnAction(e -> {
-            if (Integer.parseInt(poin.getText()) > UserController.user.getPoints().getValue()) {
-                Alert log = new Alert(AlertType.WARNING);
-                log.setTitle(null);
-                log.setTitle("Gagal Submit");
-                log.setHeaderText(null);
-                log.setContentText("Poin kamu tidak mencukupi");
-                log.showAndWait();
-            } else if (namaPilihan.getValue() == null || poin.getText() == null || nomoran.getText() == null) {
+            if (namaPilihan.getValue() == null || poin.getText().isEmpty() || nomoran.getText().isEmpty()) {
                 Alert log = new Alert(AlertType.WARNING);
                 log.setTitle(null);
                 log.setTitle("Gagal submit");
                 log.setHeaderText(null);
                 log.setContentText("Field tidak boleh kosong");
+                log.showAndWait();
+            } else if (Integer.parseInt(poin.getText()) > UserController.user.getPoints().getValue()) {
+                Alert log = new Alert(AlertType.WARNING);
+                log.setTitle(null);
+                log.setTitle("Gagal Submit");
+                log.setHeaderText(null);
+                log.setContentText("Poin kamu tidak mencukupi");
                 log.showAndWait();
             } else if (Integer.parseInt(poin.getText()) < (min * 1000)) {
                 Alert log = new Alert(AlertType.WARNING);

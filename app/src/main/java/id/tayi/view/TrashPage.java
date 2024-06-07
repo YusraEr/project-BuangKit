@@ -87,10 +87,15 @@ public class TrashPage implements MainPage, ScenePage {
         submit.setOnAction(e -> {
             String nama = UserController.user.getUsername().getValue();
             String type = jenis.getValue();
-            double brt = Double.parseDouble(nilai.getText());
+            double brt = 0;
             String lokasi = alamat.getText();
             String waktu = timeNow();
-
+            try {
+                brt = Double.parseDouble(nilai.getText());
+            } catch (Exception error) {
+                brt = 0;
+            }
+            
             if (nanya.isSelected())
                 lokasi = "Bank Sampah";
 
@@ -98,32 +103,31 @@ public class TrashPage implements MainPage, ScenePage {
             PauseTransition pause = new PauseTransition(Duration.seconds(3));
             pause.play();
 
-            if (type != null && brt > 0 && (lokasi != null || lokasi == "Bank Sampah")) {
+            if (type != null && brt > 0 && (!lokasi.isEmpty() || lokasi == "Bank Sampah")) {
                 Trash trash = new Trash(nama, type, brt, lokasi, waktu);
                 Alert log = new Alert(AlertType.INFORMATION);
                 log.setTitle("Status sampah");
                 log.setHeaderText(null);
                 log.setContentText("Sampah berhasil dilaporkan");
-                
+
                 if (lokasi == "Bank Sampah") {
-                    int currentPoint = convertPoin(jenis.getValue(), brt) + UserController.user.getPoints().getValue();
+                    int currentPoint = convertPoin(type, brt) + UserController.user.getPoints().getValue();
                     UserController.user.setPoints(currentPoint);
-                    userDAO.updateUserPoints(UserController.user.getUsername().getValue(), currentPoint);
+                    userDAO.updateUserPoints(nama, currentPoint);
                     log.setContentText("Sampah berhasil dilaporkan, anda mendapatkan " + currentPoint + " Pts");
                 }
-                
+
                 log.showAndWait();
                 reset(nilai, alamat);
                 trashDAO.addTrash(trash);
                 app.showDefaultPage();
-            } else {
+            } else if (type == null || brt == 0 || alamat.getText().isEmpty()) {
                 reset(nilai, alamat);
                 Alert log = new Alert(AlertType.INFORMATION);
                 log.setTitle("Status sampah");
                 log.setHeaderText(null);
                 log.setContentText("Sampah gagal dilaporkan");
                 log.showAndWait();
-
             }
 
         });
