@@ -88,7 +88,7 @@ public class RegisterPage implements MainPage, ScenePage{
                 infoAlert.setHeaderText(null);
                 infoAlert.setContentText("Berhasil membuat akun");
                 infoAlert.showAndWait();
-                User user = new User(name, pass, nmr, kta);
+                User user = new User(name, pass, kta, nmr);
                 userDAO.addUser(user);
                 app.showLoginPage();
             }
